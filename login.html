@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <title>login界面</title>
+</head>
+<body>
+    <div class="big-box">
+        <div class="qidese-box">
+            <h2>WELCOME</h2>
+            <p>JOIN US</p>
+            <div class="img-box">
+                <img src="img\QQ20220724003202.jpg" alt="233">
+            </div>
+        </div>
+        <div class="register-box">
+            <div class="title-box">
+                <h1>注册</h1>
+            </div>
+            <div class="input-box">
+                <input  type="text" placeholder="请输入用户名">
+                <input  type="password" placeholder="请输入密码">
+                <input  type="password" placeholder="请确认密码">
+                <div class="btn-box">
+                    <button>注册</button>
+                    <p onclick="mySwitch()">已有账号？去登录</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="login-box">
+            <div class="title-box">
+                <h1>登录</h1>
+            </div>
+            <div class="input-box">
+                <input  type="text" placeholder="请输入用户名">
+                <input  type="password" placeholder="请输入密码">
+                <div class="btn-box">
+                    <button>登录</button>
+                    <p onclick="mySwitch()">没有帐号？去注册</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        let flg=true;
+        const mySwitch=()=>{
+            if(flg){
+                $(".qidese-box").css("transform","translateX(100%)")
+                $(".qidese-box").css("background-color"," rgb(220, 199, 199)")
+                $(".qidese-box img").attr("src","img/QQ20220724003250.jpg")
+                $(".login-box .input-box .btn-box p").css("display","none")
+                $(".register-box .input-box .btn-box p").css("display","block")
+            }
+            else{
+                $(".qidese-box").css("transform","translateX(0)")
+                $(".qidese-box").css("background-color"," rgb(104, 199, 211)")
+                $(".qidese-box img").attr("src","img/QQ20220724003202.jpg")
+                $(".register-box .input-box .btn-box p").css("display","none")
+                $(".login-box .input-box .btn-box p").css("display","block")
+
+            }
+            flg=!flg
+        }
+    </script>
+</body>
+</html>
